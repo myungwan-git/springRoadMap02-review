@@ -1,5 +1,9 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService{
 
   //인터페이스만이 아닌 구현체(MemoryMemberRepository)까지 의존했으므로 이는 DIP 위반.
@@ -11,7 +15,7 @@ public class MemberServiceImpl implements MemberService{
     return memberRepository;
   }
 
-
+  @Autowired
   public MemberServiceImpl(MemberRepository memberRepository) {
     this.memberRepository = memberRepository;
   }
