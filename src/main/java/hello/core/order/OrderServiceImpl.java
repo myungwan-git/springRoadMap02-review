@@ -15,6 +15,11 @@ public class OrderServiceImpl implements OrderService {
   private MemberRepository memberRepository;
   private DiscountPolicy discountPolicy;
 
+  //AppConfig에서 memberRepository가 singleton이다. 의 확인을 위한 테스트코드
+  public MemberRepository getMemberRepository() {
+    return memberRepository;
+  }
+
   public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
     this.memberRepository = memberRepository;
     this.discountPolicy = discountPolicy;

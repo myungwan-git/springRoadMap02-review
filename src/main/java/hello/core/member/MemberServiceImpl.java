@@ -6,6 +6,12 @@ public class MemberServiceImpl implements MemberService{
   //private final MemberRepository memberRepository = new MemoryMemberRepository();
   private MemberRepository memberRepository;
 
+  //AppConfig에서 memberRepository가 singleton이다. 의 확인을 위한 테스트코드
+  public MemberRepository getMemberRepository() {
+    return memberRepository;
+  }
+
+
   public MemberServiceImpl(MemberRepository memberRepository) {
     this.memberRepository = memberRepository;
   }
